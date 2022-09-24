@@ -1,6 +1,6 @@
 /*
  * Application Home
- * Contains main Routing
+ * Contains Routing
  */
 
 // imports
@@ -8,13 +8,19 @@
 
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
-import Home from "./components/Home/Home"
-import DashboardLayout from "./components/Dashboard/DashboardLayout"
-import Company from "./components/Dashboard/Company/Company"
+import Home from './components/Home/Home'
+import DashboardLayout from './components/Dashboard/DashboardLayout'
+import Company from './components/Dashboard/Company/Company'
 import Member from './components/Dashboard/Member/Member'
-import Error404 from "./components/Errors/404"
+import Projects from './components/Projects/Projects'
+import Project from './components/Projects/Project/Project'
+import Tasks from './components/Tasks/Tasks'
+import Task from './components/Tasks/Task/Task'
+import Login from './components/Auth/UI/Login'
+import Signup from './components/Auth/UI/SIgnup'
+import Error from './components/Errors/Error'
 
-// Componnet codes
+// Component codes
 // ---------------------------------------------------
 export default function App() {
   return (
@@ -24,9 +30,19 @@ export default function App() {
         <Route path="/" element={<Home/>}/>
         <Route element={<DashboardLayout/>}>
             <Route path="/company" element={<Company/>} />
-            <Route path="/company" element={<Company/>} />
+            <Route path="/member" element={<Member/>} />
+            <Route path="/projects">
+                <Route path=":projectId" element={<Project/>}/>
+                <Route index element={<Projects/>}/>
+            </Route>
+            <Route path="/tasks">
+                <Route path=":taskId" element={<Task/>}/>
+                <Route index element={<Tasks/>}/>
+            </Route>
         </Route>
-        <Route path="*" element={<Error404/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="*" element={<Error/>}/>
       </Routes>
     </Router>
 

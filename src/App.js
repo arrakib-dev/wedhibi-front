@@ -10,6 +10,18 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom
 
 import AuthContext from "./components/Auth/context/AuthContext"
 
+import Home from "./components/Home/Home"
+import DashboardLayout from './components/Dashboard/DashboardLayout'
+import Dashboard from './components/Dashboard/Dashboard/Dashboard'
+import Projects from './components/Projects/Projects'
+import Project from './components/Projects/Project/Project'
+import Tasks from './components/Tasks/Tasks'
+import Task from './components/Tasks/Task/Task'
+import Login from './components/Auth/UI/Login'
+import Signup from './components/Auth/UI/Signup'
+import Error from './components/Errors/Error'
+
+/*
 const Home = lazy(() => import('./components/Home/Home'))
 const DashboardLayout = lazy(() => import('./components/Dashboard/DashboardLayout'))
 const Dashboard = lazy(() => import('./components/Dashboard/Dashboard/Dashboard'))
@@ -20,7 +32,7 @@ const Task = lazy(() => import('./components/Tasks/Task/Task'))
 const Login = lazy(() => import('./components/Auth/UI/Login'))
 const Signup = lazy(() => import('./components/Auth/UI/Signup'))
 const Error = lazy(() => import('./components/Errors/Error'))
-
+*/
 // Component codes
 // ---------------------------------------------------
 export default function App() {
